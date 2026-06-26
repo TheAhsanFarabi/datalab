@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+::selection { background: #d9f2e3; }
+
+.btn-3d {
+  @apply shadow-btn active:translate-y-[2px] active:shadow-none transition-[transform,box-shadow] duration-75;
+}
+
+.cm-editor { font-size: 13.5px; }
+.cm-editor.cm-focused { outline: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Markdown cell rendering */
+.md-body .md-h1 { font-size: 1.45rem; font-weight: 800; margin-bottom: .4rem; }
+.md-body .md-h2 { font-size: 1.2rem; font-weight: 800; margin-bottom: .35rem; }
+.md-body .md-h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .3rem; }
+.md-body .md-h4 { font-size: .95rem; font-weight: 700; margin-bottom: .25rem; }
+.md-body .md-p { font-size: .9rem; line-height: 1.55; margin-bottom: .5rem; }
+.md-body .md-ul, .md-body .md-ol { font-size: .9rem; line-height: 1.55; margin: 0 0 .5rem 1.25rem; }
+.md-body .md-ul { list-style: disc; }
+.md-body .md-ol { list-style: decimal; }
+.md-body .md-code { font-family: 'JetBrains Mono', monospace; font-size: .82em; background: #F1F0E8; border-radius: 4px; padding: 1px 5px; }
+.md-body .md-pre { font-family: 'JetBrains Mono', monospace; font-size: .8rem; background: #21303F; color: #FBFBF6; border-radius: 10px; padding: .75rem 1rem; overflow-x: auto; margin-bottom: .5rem; }
+.md-body .md-link { color: #2D7FF9; text-decoration: underline; }
+.md-body > :last-child { margin-bottom: 0; }
